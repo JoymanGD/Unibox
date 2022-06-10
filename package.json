@@ -1,0 +1,22 @@
+{
+  "name": "com.joyman.unibox",
+  "version": "1.0.0",
+  "displayName": "Unibox",
+  "description": "Unibox is a DropBox communication tool for Unity developed as an editor window. While using Unibox you don't need to generate auth-token every time you want to download some files. All you need is to get your app key from your DB App developers page once and for all.",
+  "unity": "2020.3",
+  "unityRelease": "19f1",
+  "documentationUrl": "https://github.com/JoymanGD/Unibox/README.md",
+  "changelogUrl": "https://github.com/JoymanGD/Unibox/CHANGELOG.md",
+  "licensesUrl": "https://github.com/JoymanGD/Unibox/LICENSE.md",
+  "dependencies": {
+  },
+  "keywords": [
+    "unibox",
+    "dropbox"
+  ],
+  "author": {
+    "name": "Joyman",
+    "email": "joyman.gamedev@gmail.com",
+    "url": "https://github.com/JoymanGD/"
+  }
+}

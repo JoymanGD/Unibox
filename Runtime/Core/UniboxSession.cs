@@ -52,11 +52,20 @@ namespace Unibox
         {
             OnProcessStarted?.Invoke("list_folder");
 
+            List<Metadata> files = new List<Metadata>();
+            
             var list = await client.WithPathRoot(teamNamespaceId).Files.ListFolderAsync(path, recursive);
+            files.AddRange(list.Entries);
+
+            while(list.HasMore)
+            {
+                list = await client.WithPathRoot(teamNamespaceId).Files.ListFolderContinueAsync(new ListFolderContinueArg(list.Cursor));
+                files.AddRange(list.Entries);
+            }
 
             OnProcessEnded?.Invoke("list_folder");
 
-            return list.Entries;
+            return files;
         }
 
         public async Task DownloadSingleFileAsync(string path, FileMetadata file, string savePath, bool includeProjectPath = true)

@@ -197,6 +197,10 @@ namespace Unibox
                 {
                     http = new HttpListener();
                     http.Prefixes.Add(redirectUriHostPart);
+                    
+                    http.Stop();
+                    http.Abort();
+                    
                     http.Start();
                 }
 

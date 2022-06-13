@@ -100,7 +100,9 @@ namespace Unibox
                         (await response.GetContentAsStreamAsync()).CopyTo(fileStream);
                         
                         OnSuccessHandled("Downloaded successfully!");
+                        #if UNITY_EDITOR
                         AssetDatabase.Refresh();
+                        #endif
                     }
                 }
             }
@@ -145,7 +147,9 @@ namespace Unibox
                 }
 
                 OnSuccessHandled("Downloaded successfully!");
+                #if UNITY_EDITOR
                 AssetDatabase.Refresh();
+                #endif
             }
             catch(Exception e)
             {
